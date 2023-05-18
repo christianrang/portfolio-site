@@ -1,4 +1,4 @@
-import WorkView from "@/components/work/work";
+import WorkIndex from "@/components/work/index";
 import Layout from "../components/layout/layout";
 import { useEffect } from "react";
 
@@ -10,7 +10,7 @@ export default function Work() {
     return (
         <>
             <Layout>
-            <WorkView />
+            <WorkIndex />
             </Layout>
         </>
     );
