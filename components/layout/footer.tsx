@@ -7,14 +7,14 @@ const Footer = () => {
     return (
         <>
             <div className={styles.footer}>
-                    <Link href="https://github.com/christianrang/portfolio-site">
-                        <Image
-                            src="/github-mark-white.svg"
-                            alt=""
-                            width={githubHeight}
-                            height={githubHeight}
-                        />
-                    </Link>
+                <Link href="https://github.com/christianrang/portfolio-site">
+                    <Image
+                        src="/github-mark-white.svg"
+                        alt=""
+                        width={githubHeight}
+                        height={githubHeight}
+                    />
+                </Link>
             </div>
         </>
     );

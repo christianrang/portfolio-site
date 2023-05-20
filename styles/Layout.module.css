@@ -19,12 +19,20 @@
 .contained {
     position: relative;
     top: 75px;
+    overflow-y: scroll;
+    height: 90vh;
+    scrollbar-width: none;
+}
+
+.contained::-webkit-scrollbar {
+    display: none;
 }
 
 .footer {
     position: absolute;
     bottom: 10px;
-    display: flex;
+    /* display: flex; */
+    display: fixed;
     margin-left: 50%;
 
     @media (max-height: 700px) {
