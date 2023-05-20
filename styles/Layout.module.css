@@ -25,6 +25,7 @@
     position: absolute;
     bottom: 10px;
     display: flex;
+    margin-left: 50%;
 
     @media (max-height: 700px) {
         display: none;
