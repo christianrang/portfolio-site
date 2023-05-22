@@ -9,6 +9,8 @@ type WorkViewProps = {
 const WorkView = ({ workInfo }: WorkViewProps) => {
     return (
         <>
+            {workInfo ? (
+            <>
             <h1 className={styles.header}>{workInfo.name}</h1>
             <div className={styles.viewdate}>{workInfo.date}</div>
             <div className={styles.viewlinks}>
@@ -20,6 +22,8 @@ const WorkView = ({ workInfo }: WorkViewProps) => {
             <div className={styles.viewbody}>
                 {workInfo.body}
             </div>
+            </>
+            ): null }
         </>
     );
 };
