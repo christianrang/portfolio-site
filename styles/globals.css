@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    /* --main-bg-color: #1d1c1b; */
+    /* --main-bg-color: #1c2841; */
+    --main-bg-color: #1F1721;
+    --highlight-main-bg-color: #49364E;
+    --max-width: 600px;
+    --min-width: 200px;
+    --primary-text-color: white;
+    --secondary-text-color: #d2d0d2;
+    --third-text-color: #205973;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --foreground-rgb: #1d1c1b;
+        --background-start-rgb: #1d1c1b;
+        --background-end-rgb: #1d1c1b;
+    }
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html,
+body {
+    max-width: 100vw;
+    background: var(--main-bg-color);
+}
+
+h1.intro {
+    font-size: 40px;
+    font-weight: 500;
+    text-align: left;
+    margin-bottom: 5px;
+
+    @media (max-height: 700px) {
+        font-size: 30px;
+    }
+}
+
+h2.intro {
+    font-size: 30px;
+    font-weight: 400;
+    color: var(--third-text-color);
+    text-align: left;
+    margin-bottom: 10px;
+
+    @media (max-height: 700px) {
+        font-size: 20px;
+    }
+}
+
+p.intro {
+    font-size: 16px;
+    color: var(--secondary-text-color);
+    margin-left: 20px;
+
+    @media (max-height: 700px) {
+        font-size: 15px;
+    }
+}
+
+div.intro {
+    margin-top: 80%;
+    position: absolute; 
+
+    @media (max-height: 700px) {
+        margin-top: 70%;
+    }
+}
+
+h1,
+h2 {
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+@media (prefers-color-scheme: dark) {
+    html {
+        color-scheme: dark;
+    }
+}
