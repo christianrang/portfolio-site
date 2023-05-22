@@ -21,7 +21,7 @@ export const workInfoList: Map<string, WorkInfo> = new Map<string, WorkInfo>([
             name: "TicTacToe",
             github: "https://github.com/christianrang/nextjs-portfolio/tree/main/components/tictactoe",
             seeMoreLink: "/work/tictactoe",
-            img: "http://via.placeholder.com/1920x1080",
+            img: "/tictactoe.gif",
             body: "Tempore vel doloremque ab et quo quas vero ea. Quis maiores corrupti quia. Est aperiam id animi sit quia vero sint.Est necessitatibus sed aliquid temporibus deserunt et aliquam. Aspernatur debitis doloribus non perspiciatis qui. Recusandae adipisci minima ea magnam optio. Magni corporis quos amet dignissimos. Aut qui magnam autem deserunt sunt doloremque quis ut. Et esse ipsam mollitia dignissimos aut vel aliquam et. Velit odio natus facilis suscipit. Architecto minus sit iure est minus. Atque occaecati cumque sit. Esse a aliquam omnis labore.Quia commodi in voluptatibus autem ex explicabo sit. Sunt non blanditiis rem nemo ea quisquam et. Laudantium illum et perferendis molestias iste nihil. Veniam aut veritatis eligendi voluptate. Totam asperiores consequatur totam assumenda. Sunt aut tempore soluta. Est vel et ut tempora error. Sequi dolorum similique maxime aut pariatur voluptatem. Minus eveniet quos sint explicabo eligendi quam quia provident.",
             pageUrl: "https://portfolio.rang-corp.com/tictactoe",
             date: "2023-02-02",
