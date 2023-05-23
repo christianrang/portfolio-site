@@ -56,16 +56,26 @@
     display: none;
 }
 
-.footer {
+.footercontainer {
+    width: 100vh;
+    min-width: var(--min-width);
+    max-width: var(--max-width);
     position: absolute;
     bottom: 10px;
-    /* display: flex; */
     display: fixed;
-    margin-left: 50%;
 
     @media (max-height: 700px) {
         display: none;
     }
+
+}
+
+.footerinnercontainer {
+    display: flex;
+    justify-content: center;
+}
+
+.footer {
 }
 
 .rightfooter {
