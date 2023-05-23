@@ -68,7 +68,6 @@ p.intro {
 }
 
 div.intro {
-    margin-top: 80%;
     position: absolute; 
 
     @media (max-height: 700px) {
