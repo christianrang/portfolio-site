@@ -11,6 +11,25 @@ export type WorkInfo = {
     body: string;
     pageUrl: string;
     date: string;
+    tags?: string[];
+};
+
+type WorkCardTagProps = {
+    tags: string[];
+};
+
+export const WorkCardTag = ({ tags }: WorkCardTagProps) => {
+    return (
+        <>
+            {tags.map((value: string, index: number) => {
+                return (
+                    <span key={index} className={styles.tag}>
+                        {value}
+                    </span>
+                );
+            })}
+        </>
+    );
 };
 
 type WorkCardProps = {
@@ -21,7 +40,12 @@ const WorkCard = ({ workInfo }: WorkCardProps) => {
     const router = useRouter();
 
     return (
-        <div className={styles.contained} onClick={() => {router.push(workInfo.seeMoreLink)}}>
+        <div
+            className={styles.contained}
+            onClick={() => {
+                router.push(workInfo.seeMoreLink);
+            }}
+        >
             <div className={styles.leftcontained}>
                 <img className={styles.imgcontained} src={workInfo.img}></img>
             </div>
@@ -32,7 +56,11 @@ const WorkCard = ({ workInfo }: WorkCardProps) => {
                     </div>
                 </h1>
                 {workInfo.tldr}
-                <div className={styles.footer}></div>
+                <div className={styles.footer}>
+                    {workInfo.tags ? (
+                        <WorkCardTag tags={workInfo.tags}></WorkCardTag>
+                    ) : null}
+                </div>
             </div>
         </div>
     );

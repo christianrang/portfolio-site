@@ -16,6 +16,7 @@ export const workInfoList: Map<string, WorkInfo> = new Map<string, WorkInfo>([
             pageUrl: "https://rang-corp.com",
             date: "2023-05-22",
             tldr: "This is the site you are visiting now. It is built using NextJS and typescript. It is deployed using Vercel for cost efficient deployments",
+            tags: ["NextJS", "Typescript", "Vercel"],
         },
     ],
     [

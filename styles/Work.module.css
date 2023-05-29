@@ -79,3 +79,10 @@
 .viewbody {
     text-align: justify;
 }
+
+.tag {
+    color: var(--third-text-color);
+    /* border-radius: 30px; */
+    padding: 5px;
+    margin: 5px;
+}
