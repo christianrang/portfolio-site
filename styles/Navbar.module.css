@@ -4,7 +4,7 @@
     padding: 5px;
     font-weight: 365;
     font-size: 20px;
-    color: white;
+    color: var(--primary-text-color);
     margin-bottom: 10px;
     font-family: "Roboto Mono", monospace;
     top: 0px;

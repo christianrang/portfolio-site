@@ -3,7 +3,7 @@
     margin-right: auto;
     min-width: var(--min-width);
     max-width: var(--max-width);
-    color: white;
+    color: var(--primary-text-color);
     font-family: "Roboto Mono", monospace;
     /* for mobile devices or small width windows */
     @media (max-width: 875px) {
@@ -20,7 +20,7 @@
     margin-right: auto;
     min-width: var(--min-width);
     max-width: var(--max-width);
-    color: white;
+    color: var(--primary-text-color);
     font-family: "Roboto Mono", monospace;
     /* for mobile devices or small width windows */
     @media (max-width: 875px) {
@@ -37,7 +37,14 @@
 
 .centeredcontained {
     overflow-y: scroll;
-    scrollbar-width: none;
+
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+}
+
+.container::-webkit-scrollbar {
+    display: none;
 }
 
 .centeredcontained::-webkit-scrollbar {
@@ -45,11 +52,11 @@
 }
 
 .contained {
+    overflow-y: scroll;
     position: relative;
     top: 75px;
-    overflow-y: scroll;
-    height: 90vh;
     scrollbar-width: none;
+    height: 90vh;
 }
 
 .contained::-webkit-scrollbar {

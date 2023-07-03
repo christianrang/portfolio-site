@@ -1,6 +1,7 @@
 import Layout from "../components/layout/layout";
 import Centered from "@/components/layout/helpers/centered";
 import { useEffect } from "react";
+import WorkIndex from "@/components/work/index";
 
 export default function Home() {
     useEffect(() => {
@@ -19,6 +20,7 @@ export default function Home() {
                         my skill set into web and TUI applications.
                     </p>
                 </Centered>
+                <WorkIndex />
             </Layout>
         </>
     );

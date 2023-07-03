@@ -13,6 +13,6 @@ const Centered = ({ children }: CenteredProps) => {
             </div>
         </>
     );
-}
+};
 
 export default Centered;

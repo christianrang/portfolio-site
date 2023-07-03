@@ -1,5 +1,6 @@
 import styles from "@/styles/Work.module.css";
 import Link from "next/link";
+import Image from "next/image";
 import { useRouter } from "next/router";
 
 export type WorkInfo = {
@@ -47,7 +48,7 @@ const WorkCard = ({ workInfo }: WorkCardProps) => {
             }}
         >
             <div className={styles.leftcontained}>
-                <img className={styles.imgcontained} src={workInfo.img}></img>
+                <Image className={styles.imgcontained} src={workInfo.img} alt="Image missing" width="1920" height="1080" />
             </div>
             <div className={styles.rightcontained}>
                 <h1 className={styles.header}>
@@ -58,7 +59,7 @@ const WorkCard = ({ workInfo }: WorkCardProps) => {
                 {workInfo.tldr}
                 <div className={styles.footer}>
                     {workInfo.tags ? (
-                        <WorkCardTag tags={workInfo.tags}></WorkCardTag>
+                        <WorkCardTag tags={workInfo.tags} />
                     ) : null}
                 </div>
             </div>

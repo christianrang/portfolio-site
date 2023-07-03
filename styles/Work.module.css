@@ -1,6 +1,13 @@
+.workindexcontainer {
+    height: 70vh;
+
+    position: -webkit-sticky;
+    position: sticky;
+}
+
 .contained {
     border-radius: 10px;
-    height: 169px;
+    height: 171px;
     margin-bottom: 25px;
     cursor: pointer;
 }
@@ -11,7 +18,7 @@
 
 .rightcontained {
     margin-left: 50%;
-    height: 175px;
+    height: 171px;
     width: 50%;
     padding-left: 10px;
     padding-right: 10px;
@@ -22,7 +29,7 @@
 .leftcontained {
     margin-right: 50%;
     width: 50%;
-    height: 175px;
+    height: 171px;
     position: absolute;
 }
 
@@ -32,7 +39,9 @@
 
 .imgcontained {
     border-radius: 10px;
+    height: 171px;
     max-width: 100%;
+    z-index: 0;
 }
 
 .seemore {
@@ -81,8 +90,8 @@
 }
 
 .tag {
-    color: var(--third-text-color);
-    /* border-radius: 30px; */
+    background: var(--third-text-color);
+    border-radius: 10px;
     padding: 5px;
     margin: 5px;
 }
