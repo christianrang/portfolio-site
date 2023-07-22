@@ -64,15 +64,16 @@
     margin-left: auto;
     margin-right: auto;
     position: absolute;
-    bottom: 10px;
+    bottom: -1px;
 
     @media (max-height: 700px) {
         display: none;
     }
-
+    background: var(--main-bg-color);
 }
 
 .footerinnercontainer {
+    padding: 15px;
     display: flex;
     justify-content: center;
 }
