@@ -25,9 +25,13 @@
     display: inline-block;
     position: absolute;
     top: 10px;
-    min-width: var(--min-width);
     @media (max-width: 875px) {
         margin-left: -10px;
         min-width: 100px;
     }
+}
+
+.container {
+    min-width: var(--min-width);
+    max-width: var(--max-width);
 }
