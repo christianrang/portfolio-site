@@ -26,7 +26,7 @@ export const NavItems: NavItem[] = [
     {
         name: "About",
         route: "/about",
-        enabled: true,
+        enabled: false,
     },
 ];
 
