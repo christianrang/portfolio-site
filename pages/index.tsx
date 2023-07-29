@@ -1,7 +1,7 @@
 import Layout from "../components/layout/layout";
 import Centered from "@/components/layout/helpers/centered";
 import { useEffect } from "react";
-import WorkIndex from "@/components/work/index";
+import ExperienceIndex from "@/components/experience";
 
 export default function Home() {
     useEffect(() => {
@@ -11,17 +11,18 @@ export default function Home() {
     return (
         <>
             <Layout>
-                    <Centered>
-                        <h1 className="intro">Hi! I&apos;m Christian Rang.</h1>
-                        <h2 className="intro">I build effecient backends.</h2>
-                        <p className="intro">
-                            I&apos;m a software engineer with experience
-                            building backend applications. I enjoy oppurtunies
-                            to branch out my skill set into web and TUI
-                            applications.
-                        </p>
-                    </Centered>
-                <WorkIndex />
+                <Centered>
+                    <h1 className="intro">Hi! I&apos;m Christian Rang.</h1>
+                    <h2 className="intro">I build effecient backends.</h2>
+                    <p className="intro">
+                        I&apos;m a software engineer with experience building
+                        backend applications. I enjoy oppurtunies to branch out
+                        my skill set into web and TUI applications.
+                    </p>
+                </Centered>
+                <ExperienceIndex />
+                <div>
+                </div>
             </Layout>
         </>
     );
