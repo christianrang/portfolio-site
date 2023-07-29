@@ -26,19 +26,19 @@ export const NavItems: NavItem[] = [
     {
         name: "About",
         route: "/about",
-        enabled: true,
+        enabled: false,
     },
 ];
 
-const Navbar = ({navbarItems}: NavbarProps) => {
+const Navbar = ({ navbarItems }: NavbarProps) => {
     const router = useRouter();
 
     return (
         <>
-            <div className={styles.navbarcontainer}>
-                <>
-                    {navbarItems.map(
-                        ({ name, route, enabled }, index) => {
+            <div className={styles.container}>
+                <div className={styles.navbarcontainer}>
+                    <>
+                        {navbarItems.map(({ name, route, enabled }, index) => {
                             if (enabled) {
                                 return (
                                     <div
@@ -54,9 +54,9 @@ const Navbar = ({navbarItems}: NavbarProps) => {
                                     </div>
                                 );
                             }
-                        }
-                    )}
-                </>
+                        })}
+                    </>
+                </div>
             </div>
         </>
     );
