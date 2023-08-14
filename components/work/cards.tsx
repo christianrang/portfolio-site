@@ -56,7 +56,6 @@ const WorkCard = ({ workInfo }: WorkCardProps) => {
                         <Link href={workInfo.seeMoreLink}>{workInfo.name}</Link>
                     </div>
                 </h1>
-                {workInfo.tldr}
                 <div className={styles.footer}>
                     {workInfo.tags ? (
                         <WorkCardTag tags={workInfo.tags} />
