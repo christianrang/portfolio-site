@@ -2,7 +2,9 @@ Personal Portfolio Site
 
 ## Starting application for Development
 
-`yarn run dev`
+Install npm packages: `npm i`
+
+Start dev nextjs server: `yarn run dev`
 
 ## Production
 
