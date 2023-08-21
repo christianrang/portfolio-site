@@ -1,12 +1,35 @@
 import Layout from "../components/layout/layout";
 import Centered from "@/components/layout/helpers/centered";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import ExperienceIndex from "@/components/experience";
+import styles from "@/styles/Layout.module.css";
+import Image from "next/image";
 
 export default function Home() {
+    const [isVisible, setIsVisible] = useState(true);
+    const [height, setHeight] = useState(0);
+    const arrowHeight = 20;
+
     useEffect(() => {
-        document.title = "Home | Rang Corp";
+        var element = window.document.querySelector("#scroll-for-more-tracked");
+        element?.addEventListener("scroll", listenToScroll);
+        return () => element?.removeEventListener("scroll", listenToScroll);
     }, []);
+
+    const listenToScroll = () => {
+        let heightToHideFrom = 200;
+        var winScroll = window.document.querySelector("#scroll-for-more-tracked")?.scrollTop;
+        if (winScroll === undefined) {
+            winScroll = 0;
+        }
+        setHeight(winScroll);
+
+        if (winScroll > heightToHideFrom) {
+            isVisible && setIsVisible(false);
+        } else {
+            setIsVisible(true);
+        }
+    };
 
     return (
         <>
@@ -20,9 +43,24 @@ export default function Home() {
                         my skill set into web and TUI applications.
                     </p>
                 </Centered>
-                <ExperienceIndex />
-                <div>
+                <div className={styles.footercontainer}>
+                    <div className={styles.footerinnercontainer}>
+                        {isVisible && (
+                            <div id="hide">
+                                Scroll for more
+                                <div className={styles.footerinnercontainer}>
+                                    <Image
+                                        src="/down-arrow.svg"
+                                        alt=""
+                                        width={arrowHeight}
+                                        height={arrowHeight}
+                                    />
+                                </div>
+                            </div>
+                        )}
+                    </div>
                 </div>
+                <ExperienceIndex />
             </Layout>
         </>
     );
