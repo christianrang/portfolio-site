@@ -10,6 +10,9 @@
         margin-right: 10px;
         min-width: 0px;
     }
+
+    --footer-height: 50px;
+    --navbar-height: 100px;
 }
 
 .centeredcontainer {
@@ -51,7 +54,10 @@
     overflow-y: scroll;
     position: relative;
     scrollbar-width: none;
-    height: 90vh;
+    height: calc(100vh - var(--footer-height) - var(--navbar-height));
+    @media (max-height: 700px) {
+        height: calc(100vh - var(--navbar-height));
+    }
 }
 
 .contained::-webkit-scrollbar {
@@ -64,6 +70,7 @@
     margin-right: auto;
     position: absolute;
     bottom: -1px;
+    height: var(--footer-height);
 
     @media (max-height: 700px) {
         display: none;
@@ -72,7 +79,6 @@
 }
 
 .footerinnercontainer {
-    padding: 15px;
     display: flex;
     justify-content: center;
 }
