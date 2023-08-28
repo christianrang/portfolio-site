@@ -1,14 +1,16 @@
 import Layout from "../components/layout/layout";
 import { useEffect } from "react";
+import ProjectsIndex from "@/components/projects";
 
-export default function Work() {
+export default function Projects() {
     useEffect(() => {
-        document.title = "About | Rang Corp";
+        document.title = "Projects | Rang Corp";
     }, []);
 
     return (
         <>
             <Layout>
+            <ProjectsIndex />
             </Layout>
         </>
     );

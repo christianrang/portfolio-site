@@ -19,14 +19,9 @@ export const NavItems: NavItem[] = [
         enabled: true,
     },
     {
-        name: "Work",
-        route: "/work",
+        name: "Projects",
+        route: "/projects",
         enabled: true,
-    },
-    {
-        name: "About",
-        route: "/about",
-        enabled: false,
     },
 ];
 
