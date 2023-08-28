@@ -1,9 +1,9 @@
-import styles from "@/styles/Work.module.css";
+import styles from "@/styles/Projects.module.css";
 import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/router";
 
-export type WorkInfo = {
+export type ProjectInfo = {
     name: string;
     github: string;
     seeMoreLink: string;
@@ -15,11 +15,11 @@ export type WorkInfo = {
     tags?: string[];
 };
 
-type WorkCardTagProps = {
+type ProjectsCardTagProps = {
     tags: string[];
 };
 
-export const WorkCardTag = ({ tags }: WorkCardTagProps) => {
+export const WorkCardTag = ({ tags }: ProjectsCardTagProps) => {
     return (
         <>
             {tags.map((value: string, index: number) => {
@@ -33,11 +33,11 @@ export const WorkCardTag = ({ tags }: WorkCardTagProps) => {
     );
 };
 
-type WorkCardProps = {
-    workInfo: WorkInfo;
+type ProjectsCardProps = {
+    workInfo: ProjectInfo;
 };
 
-const WorkCard = ({ workInfo }: WorkCardProps) => {
+const ProjectsCard = ({ workInfo }: ProjectsCardProps) => {
     const router = useRouter();
 
     return (
@@ -66,4 +66,4 @@ const WorkCard = ({ workInfo }: WorkCardProps) => {
     );
 };
 
-export default WorkCard;
+export default ProjectsCard;

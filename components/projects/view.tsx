@@ -1,13 +1,13 @@
-import { WorkInfo } from "./cards";
+import { ProjectInfo } from "./cards";
 import Link from "next/link";
-import styles from "@/styles/Work.module.css";
+import styles from "@/styles/Projects.module.css";
 import ReactMarkdown from "react-markdown";
 
-type WorkViewProps = {
-    workInfo?: WorkInfo;
+type ProjectsViewProps = {
+    projectInfo?: ProjectInfo;
 };
 
-const WorkView = ({ workInfo }: WorkViewProps) => {
+const ProjectsView = ({ projectInfo: workInfo }: ProjectsViewProps) => {
     return (
         <>
             {workInfo ? (
@@ -41,4 +41,4 @@ const WorkView = ({ workInfo }: WorkViewProps) => {
     );
 };
 
-export default WorkView;
+export default ProjectsView;
