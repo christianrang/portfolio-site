@@ -1,5 +1,5 @@
 import styles from "@/styles/Experience.module.css";
-import exp from "constants";
+import { ReactNode } from "react";
 
 type ExperienceCardProps = {
     experienceInfo?: ExperienceInfo;
@@ -10,7 +10,7 @@ export type ExperienceInfo = {
     jobTitle: string;
     startDate: string;
     endDate: string;
-    body: string;
+    body: ReactNode;
     tags: string[];
 };
 
@@ -22,7 +22,7 @@ const CardTags = ({ tags }: CardTagsProps) => {
     return (
         <>
             <div className={styles.cardtagscontainer}>
-                {tags?.map(
+                Technologies: {tags?.map(
                     (tag, index) => {
                         return (
                         <>
