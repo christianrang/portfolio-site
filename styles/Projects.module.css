@@ -48,7 +48,7 @@
 }
 
 .header {
-  font-size: 20px;
+  font-size: 1.3rem;
   margin: 30px;
   color: var(--primary-text-color);
 }
