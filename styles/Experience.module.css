@@ -22,7 +22,6 @@
 
 .leftcard {
     padding: 5px;
-    font-size: 18px;
     width: 30%;
     color: var(--secondary-text-color);
 }
@@ -36,16 +35,13 @@
 
 .cardheader {
     color: var(--primary-text-color);
-    font-size: 20px;
 }
 
 .cardsubheader {
     color: var(--secondary-text-color);
-    font-size: 20px;
 }
 
 .cardbody {
-    font-size: 18px;
     padding-left: 10px;
     padding-top: 10px;
 }
