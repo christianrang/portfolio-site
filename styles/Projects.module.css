@@ -86,7 +86,7 @@
 }
 
 .tag {
-  background: var(--third-text-color);
+  color: var(--third-text-color);
   border-radius: 10px;
   padding: 5px;
   margin: 5px;
