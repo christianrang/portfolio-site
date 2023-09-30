@@ -1,4 +1,8 @@
 .contact {
   margin: 50px;
   display: inline-block;
+
+  @media (max-width: 875px) {
+    display: grid;
+  }
 }
