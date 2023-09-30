@@ -37,14 +37,19 @@ const Navbar = ({ enabledRoutes }: NavbarProps) => {
 
   const navbarItems: NavItem[] = [
     {
-      name: "Home",
+      name: "home",
       route: "/",
       enabled: true,
     },
     {
-      name: "Projects",
+      name: "projects",
       route: "/projects",
       enabled: isProjectsEnabled,
+    },
+    {
+      name: "contact_me",
+      route: "/contactme",
+      enabled: true,
     },
   ];
 
