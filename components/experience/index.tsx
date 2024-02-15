@@ -54,7 +54,7 @@ export const experienceInfoList: ExperienceInfo[] = [
   },
   {
     company: "Synovus",
-    jobTitle: "Netowrk Engineer",
+    jobTitle: "Network Engineer",
     startDate: "Mar 2021",
     endDate: "Sep 2021",
     body: (
