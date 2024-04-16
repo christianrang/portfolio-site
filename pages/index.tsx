@@ -60,7 +60,7 @@ export default function Home({ layoutProps }: HomeProps) {
           <h2 className="intro">I build effecient backends.</h2>
           <p className="intro">
             I&apos;m a software engineer with experience building backend
-            applications. I enjoy oppurtunies to branch out my skill set into
+            applications. I enjoy opportunities to branch out my skill set into
             web and TUI applications.
           </p>
         </Centered>
