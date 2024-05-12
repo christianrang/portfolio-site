@@ -4,53 +4,46 @@ import { useRouter } from "next/router";
 
 type NavItem = {
   name: string;
-  route: string;
+  href: string;
   enabled: boolean;
+  type: NavItemType;
 };
 
+enum NavItemType {
+    Route,
+    Anchor,
+}
+
 type EnabledRoutes = {
-  projects: string;
+  projects: boolean;
 };
 
 type NavbarProps = {
   enabledRoutes?: EnabledRoutes;
 };
 
-const StringToBoolean = (value: string) => {
-  switch (value) {
-    case "true":
-      return true;
-    case "false":
-      return false;
-  }
-
-  return false;
-};
-
 const Navbar = ({ enabledRoutes }: NavbarProps) => {
   const router = useRouter();
 
-  const isProjectsEnabled =
-    enabledRoutes?.projects === undefined
-      ? false
-      : StringToBoolean(enabledRoutes?.projects);
-
   const navbarItems: NavItem[] = [
     {
-      name: "home",
-      route: "/",
+      name: "about",
+      href: "#about",
       enabled: true,
+      type: NavItemType.Anchor,
+    },
+    {
+      name: "experience",
+      href: "#experience",
+      enabled: true,
+      type: NavItemType.Anchor,
     },
     {
       name: "projects",
-      route: "/projects",
-      enabled: isProjectsEnabled,
-    },
-    {
-      name: "contact_me",
-      route: "/contactme",
-      enabled: true,
-    },
+      href: "#projects",
+      enabled: enabledRoutes?.projects || false,
+      type: NavItemType.Anchor,
+    }
   ];
 
   return (
@@ -58,8 +51,21 @@ const Navbar = ({ enabledRoutes }: NavbarProps) => {
       <div className={styles.container}>
         <div className={styles.navbarcontainer}>
           <>
-            {navbarItems.map(({ name, route, enabled }, index) => {
+            {navbarItems.map(({ name, href: route, enabled, type }, index) => {
               if (enabled) {
+                if (type === NavItemType.Anchor) {
+                  return (
+                    <div
+                      key={index}
+                      className={styles.navbaritem}
+                    >
+
+                    <Link key={index} href={route} scroll={true}>
+                      {name}
+                    </Link>
+                    </div>
+                  );
+                }
                 return (
                   <div
                     key={index}
