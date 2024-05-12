@@ -1,7 +1,9 @@
 import ExperienceCard, { ExperienceInfo } from "./card";
 import styles from "@/styles/Experience.module.css";
 
-type ExperienceIndexProps = {};
+type ExperienceIndexProps = {
+    header?: boolean;
+};
 
 export const experienceInfoList: ExperienceInfo[] = [
   {
@@ -86,10 +88,14 @@ export const experienceInfoList: ExperienceInfo[] = [
   },
 ];
 
-const ExperienceIndex = ({}: ExperienceIndexProps) => {
+const ExperienceIndex = ({header}: ExperienceIndexProps) => {
   return (
     <>
-      <div className={styles.bigcontainer}>
+    <div className={styles.bigcontainer}>
+    <div id="experience" />
+    {header && (
+        <h2>/experience</h2>
+    )}
         {experienceInfoList.map((experienceInfo, index) => {
           return (
             <>
