@@ -22,11 +22,11 @@ const CardTags = ({ tags }: CardTagsProps) => {
     return (
         <>
             <div className={styles.cardtagscontainer}>
-                Technologies: {tags?.map(
+                TECHNOLOGIES: {tags?.map(
                     (tag, index) => {
                         return (
                         <>
-                            <div key={index} className={styles.cardtag}>{tag}</div>
+                            <div key={index} className={styles.cardtag}>{tag.toUpperCase()}</div>
                         </>
                         );
                     }
@@ -37,24 +37,31 @@ const CardTags = ({ tags }: CardTagsProps) => {
 };
 
 const ExperienceCard = ({ experienceInfo }: ExperienceCardProps) => {
+    if (!experienceInfo) {
+        return null;
+    }
+
+    const startDate = experienceInfo?.startDate === "Present" ? new Date() : new Date(experienceInfo?.startDate);
+    const endDate = experienceInfo?.endDate === "Present" ? new Date() : new Date(experienceInfo?.endDate);
+
     return (
         <>
             <div className={styles.container}>
                 <div className={styles.card}>
                     <div className={styles.leftcard}>
-                        {experienceInfo?.startDate}-{experienceInfo?.endDate}
+                        <p><strong>{experienceInfo?.jobTitle.toUpperCase()}</strong></p>
+                        <p>/{experienceInfo?.company}</p>
+                        <small>{startDate.getFullYear()}-{endDate.getFullYear()}</small>
                     </div>
                     <div className={styles.rightcard}>
                         <div className={styles.cardheader}>
-                            {experienceInfo?.company}
-                        </div>
-                        <div className={styles.cardsubheader}>
-                            {experienceInfo?.jobTitle}
+                            <strong>
+                                <CardTags tags={experienceInfo?.tags} />
+                            </strong>
                         </div>
                         <div className={styles.cardbody}>
                             {experienceInfo?.body}
                         </div>
-                        <CardTags tags={experienceInfo?.tags} />
                     </div>
                 </div>
             </div>

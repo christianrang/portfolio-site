@@ -8,7 +8,7 @@
     /* green color pallet https://coolors.co/palette/cad2c5-84a98c-52796f-354f52-2f3e46 */
     /* current color pallet https://coolors.co/palette/01161e-124559-598392-aec3b0-eff6e0 */
     --main-bg-color: #1e1e2e;
-    --highlight-main-bg-color: #74c7ec;
+    --secondary-bg-color: #313244;
     --max-width: 900px;
     --min-width: 200px;
     --primary-text-color: #cdd6f4;
