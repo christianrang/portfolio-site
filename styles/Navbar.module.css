@@ -24,8 +24,6 @@
     display: inline-block;
     top: 10px;
     @media (max-width: 875px) {
-        margin-left: -10px;
-        min-width: 100px;
     }
 }
 

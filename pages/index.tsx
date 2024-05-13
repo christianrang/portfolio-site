@@ -4,16 +4,19 @@ import { useEffect, useState } from "react";
 import ExperienceIndex from "@/components/experience";
 import styles from "@/styles/Layout.module.css";
 import Image from "next/image";
+import ProjectsIndex from "@/components/projects";
 
 type HomeProps = {
   layoutProps: LayoutProps;
+  isProjectsEnabled: boolean;
 };
 
 export async function getStaticProps() {
-  const isProjectsEnabled = process.env.NAVBAR_ENABLED_PROJECTS;
+  const isProjectsEnabled = (process.env.NAVBAR_ENABLED_PROJECTS === "true");
 
   return {
     props: {
+      isProjectsEnabled: isProjectsEnabled,
       layoutProps: {
         navbarProps: {
           enabledRoutes: {
@@ -25,7 +28,7 @@ export async function getStaticProps() {
   };
 }
 
-export default function Home({ layoutProps }: HomeProps) {
+export default function Home({ layoutProps, isProjectsEnabled }: HomeProps) {
   const [isVisible, setIsVisible] = useState(true);
   const [height, setHeight] = useState(0);
   const arrowHeight = 20;
@@ -55,15 +58,19 @@ export default function Home({ layoutProps }: HomeProps) {
   return (
     <>
       <Layout navbarProps={layoutProps.navbarProps}>
-        <Centered>
-          <h1 className="intro">Hi! I&apos;m Christian Rang.</h1>
-          <h2 className="intro">I build effecient backends.</h2>
+      <div id="about" />
+      <Centered>
+          <header>
+          <div>
+          <h1 className="intro">Hi! I&apos;m <strong>Christian Rang.</strong></h1>
+          <h2 className="intro">I build efficient backends.</h2>
+          </div>
           <p className="intro">
-            I&apos;m a software engineer with experience building backend
-            applications. I enjoy opportunities to branch out my skill set into
+            I enjoy opportunities to branch out my skill set into
             web and TUI applications.
           </p>
-        </Centered>
+          </header>
+      </Centered>
         <div className={styles.footercontainer}>
           <div className={styles.footerinnercontainer}>
             {isVisible && (
@@ -81,7 +88,8 @@ export default function Home({ layoutProps }: HomeProps) {
             )}
           </div>
         </div>
-        <ExperienceIndex />
+        <ExperienceIndex header />
+        {isProjectsEnabled && <ProjectsIndex header />}
       </Layout>
     </>
   );
