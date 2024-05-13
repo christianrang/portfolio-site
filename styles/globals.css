@@ -8,7 +8,7 @@
     /* green color pallet https://coolors.co/palette/cad2c5-84a98c-52796f-354f52-2f3e46 */
     /* current color pallet https://coolors.co/palette/01161e-124559-598392-aec3b0-eff6e0 */
     --main-bg-color: #1e1e2e;
-    --highlight-main-bg-color: #74c7ec;
+    --secondary-bg-color: #313244;
     --max-width: 900px;
     --min-width: 200px;
     --primary-text-color: #cdd6f4;
@@ -74,7 +74,8 @@ p.intro {
 
 header > p.intro {
     color: var(--secondary-text-color);
-    padding: calc(var(--h2-font-size) * 2.5) 0 0 var(--p-font-size);
+    padding: calc(var(--top-margin) * 1.5) calc(var(--p-font-size) * 1) var(--p-font-size) var(--p-font-size);
+    word-break: break-word;
 
     @media (max-width: 700px) {
         padding: calc(var(--h2-font-size) * 8) 0 0 var(--p-font-size);
@@ -85,18 +86,12 @@ header {
     border: 2px solid var(--primary-text-color);
     border-radius: 10px;
     color: var(--third-text-color);
-    height: calc(var(--h2-font-size) * 5);
     background: var(--main-bg-color);
     position: relative;
-    padding: 0 0 0 0;
-    margin: calc(var(--h2-font-size) * 1) 0 0 0;
+    margin: calc(var(--h2-font-size) * 1) 0 0 calc(var(--h2-font-size) * 2);
 
     /* NOTE: adjust this to change how the border aligns with the header */
     --top-margin: calc(var(--h2-font-size) * 1.4);
-
-    @media (max-width: 700px) {
-        height: calc(var(--h2-font-size) * 11);
-    }
 }
 
 header > div{

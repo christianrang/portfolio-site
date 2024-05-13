@@ -9,7 +9,11 @@
 }
 
 .bigcontainer {
-    height: 100vh;
+    min-height: 100vh;
+    
+    @media (max-height: 900px) {
+        height: auto;
+    }
 }
 
 .card {
@@ -21,16 +25,13 @@
 }
 
 .leftcard {
-    padding: 5px;
-    width: 30%;
+    width: 40%;
     color: var(--secondary-text-color);
 }
 
 .rightcard {
-    width: 70%;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-bottomt: 10px;
+    width: 60%;
+    padding: 0 0 0 calc(var(--p-font-size) * 2);
 }
 
 .cardheader {
@@ -42,18 +43,13 @@
 }
 
 .cardbody {
-    padding-left: 10px;
-    padding-top: 10px;
 }
 
 .cardtagscontainer {
-  padding-top: 10px;
-  font-weight: 500;
   display: flex;
+  font-size: var(--p-font-size);
 
-  --margin-horizontal: .3rem;
-  font-size: 1.2rem;
-
+  --margin-horizontal: 1rem;
   
   @media (max-width: 700px) {
     width: auto;
@@ -64,6 +60,9 @@
 .cardtag {
   color: var(--third-text-color);
   border-radius: 10px;
-  margin-left: var(--margin-horizontal);
-  margin-right: var(--margin-horizontal);
+  margin: 0 var(--margin-horizontal) var(--margin-horizontal) 0;
+}
+
+.time {
+    margin-top: var(--p-font-size);
 }

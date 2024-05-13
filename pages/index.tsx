@@ -66,8 +66,10 @@ export default function Home({ layoutProps, isProjectsEnabled }: HomeProps) {
           <h2 className="intro">I build efficient backends.</h2>
           </div>
           <p className="intro">
-            I enjoy opportunities to branch out my skill set into
-            web and TUI applications.
+              With 6+ years of experience, I have a 
+              passion for writing scalable, efficient, and maintainable code.
+              I specialize in kubernetes, Go, and cloud-native technologies. I
+              have worked with clients including Google and Southern Fibernet.
           </p>
           </header>
       </Centered>
