@@ -8,6 +8,10 @@
     display: block;
 }
 
+.container:hover {
+    background-color: var(--secondary-bg-color);
+}
+
 .bigcontainer {
     min-height: 100vh;
     
