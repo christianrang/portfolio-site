@@ -1,6 +1,7 @@
 import ProjectsCard from "./cards";
 import styles from "@/styles/Projects.module.css";
 import { projectsInfoList } from "./list";
+import Centered from "@/components/layout/helpers/centered";
 
 type ProjectsIndexProps = {
     header?: boolean;
@@ -9,17 +10,24 @@ type ProjectsIndexProps = {
 const ProjectsIndex = ({ header }: ProjectsIndexProps) => {
     return (
         <>
-            <div className={styles.bigcontainer}>
                 <div id="projects" />
-                {header && <h2>/projects</h2>}
-                {Array.from(projectsInfoList.values()).map(
-                    (projectsInfo, index) => {
-                        return (
-                            <ProjectsCard key={index} workInfo={projectsInfo} />
-                        );
-                    }
-                )}
-            </div>
+                <Centered>
+                <div className={styles.bigcontainer}>
+                    {header && <h2>/projects</h2>}
+                    <div className={styles.index}>
+                        {Array.from(projectsInfoList.values()).map(
+                            (projectsInfo, index) => {
+                                return (
+                                    <ProjectsCard
+                                        key={index}
+                                        workInfo={projectsInfo}
+                                    />
+                                );
+                            }
+                        )}
+                    </div>
+                </div>
+                    </Centered>
         </>
     );
 };

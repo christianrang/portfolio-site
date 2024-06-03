@@ -90,8 +90,8 @@ export default function Home({ layoutProps, isProjectsEnabled }: HomeProps) {
             )}
           </div>
         </div>
-        <ExperienceIndex header />
         {isProjectsEnabled && <ProjectsIndex header />}
+        <ExperienceIndex header />
       </Layout>
     </>
   );

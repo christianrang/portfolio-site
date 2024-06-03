@@ -33,17 +33,17 @@ const Navbar = ({ enabledRoutes }: NavbarProps) => {
       type: NavItemType.Anchor,
     },
     {
+      name: "/projects",
+      href: "#projects",
+      enabled: enabledRoutes?.projects || false,
+      type: NavItemType.Anchor,
+    },
+    {
       name: "/experience",
       href: "#experience",
       enabled: true,
       type: NavItemType.Anchor,
     },
-    {
-      name: "/projects",
-      href: "#projects",
-      enabled: enabledRoutes?.projects || false,
-      type: NavItemType.Anchor,
-    }
   ];
 
   return (
