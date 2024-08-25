@@ -1,6 +1,6 @@
 .container {
     border-radius: 10px;
-    margin-bottom: 25px;
+    margin-bottom: calc(var(--p-font-size) * 1);
     min-width: var(--min-width);
     max-width: var(--max-width);
     margin-left: auto;

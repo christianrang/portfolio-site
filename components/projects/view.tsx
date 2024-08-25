@@ -15,18 +15,18 @@ const ProjectsView = ({ projectInfo: workInfo }: ProjectsViewProps) => {
                     <h1 className={styles.header}>{workInfo.name}</h1>
                     <div className={styles.viewdate}>{workInfo.date}</div>
                     <div className={styles.viewlinks}>
-                        {workInfo.github !== "" && (
+                        {workInfo.github !== undefined || workInfo.github !== "" && (
                             <Link
                                 className={styles.viewcodelink}
-                                href={workInfo.github}
+                                href={workInfo.github || ""}
                             >
                                 View Code
                             </Link>
                         )}
-                        {workInfo.pageUrl !== "" && (
+                        {workInfo.pageUrl !== undefined || workInfo.pageUrl !== "" && (
                             <Link
                                 className={styles.viewpagelink}
-                                href={workInfo.pageUrl}
+                                href={workInfo.pageUrl || ""}
                             >
                                 Visit Page
                             </Link>

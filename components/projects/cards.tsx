@@ -56,7 +56,7 @@ const ProjectsCard = ({ workInfo }: ProjectsCardProps) => {
                 </div>
                 <div className={styles.rightcontained}>
                     <p className={styles.header}>{workInfo.name}</p>
-                    <div className={styles.footer}>
+                    <div className={styles.cardtagscontainer}>
                         {workInfo.tags ? (
                             <WorkCardTag tags={workInfo.tags} />
                         ) : null}

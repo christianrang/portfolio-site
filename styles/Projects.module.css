@@ -7,13 +7,13 @@
 .index {
     display: grid;
     grid-template-columns: repeat(3, 30%);
-    grid-column-gap: 5%;
+    grid-column-gap: calc( 3 * var(--p-font-size));
+    grid-row-gap: var(--p-font-size);
 }
 
 .contained {
   border-radius: 10px;
-  min-width: var(--min-width);
-  max-width: var(--max-width);
+  width: calc(15 * var(--p-font-size));
   margin-left: auto;
   margin-right: auto;
   display: grid;
@@ -24,6 +24,7 @@
 }
 
 .rightcontained {
+  width: inherit;
   color: var(--secondary-text-color);
 }
 
@@ -81,9 +82,22 @@
   text-align: justify;
 }
 
+.cardtagscontainer {
+  display: block;
+  height: calc( 2 * var(--p-font-size));
+  font-size: var(--p-font-size);
+
+  --margin-horizontal: 1rem;
+  
+  @media (max-width: 700px) {
+    width: auto;
+    flex-wrap: wrap;
+  }
+}
+
 .tag {
   color: var(--third-text-color);
-  margin-right: 1rem;
+  margin-right: var(--p-font-size);
 }
 
 .link {
