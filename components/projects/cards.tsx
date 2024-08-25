@@ -38,7 +38,7 @@ type ProjectsCardProps = {
 };
 
 const ProjectsCard = ({ workInfo }: ProjectsCardProps) => {
-    const iconHeight = 20;
+    const iconHeight = 24;
 
     return (
         <>
@@ -78,7 +78,7 @@ const ProjectsCard = ({ workInfo }: ProjectsCardProps) => {
                             <div className={styles.link}>
                             <Link href={workInfo.github}>
                                 <Image
-                                    src="/github-mark-white.svg"
+                                    src="/source-code-100.svg"
                                     alt=""
                                     width={iconHeight}
                                     height={iconHeight}

@@ -9,11 +9,12 @@
     grid-template-columns: repeat(3, 30%);
     grid-column-gap: calc( 3 * var(--p-font-size));
     grid-row-gap: var(--p-font-size);
+    width: var(--max-width);
+    background: blue;
 }
 
 .contained {
   border-radius: 10px;
-  width: calc(15 * var(--p-font-size));
   margin-left: auto;
   margin-right: auto;
   display: grid;

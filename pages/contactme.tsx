@@ -31,18 +31,6 @@ export default function ContactMe({ layoutProps }: ContactMeProps) {
   return (
     <>
       <Layout navbarProps={layoutProps.navbarProps}>
-        <Centered>
-          <Contact
-            href="https://www.linkedin.com/in/christian-rang"
-            src="/linkedin.png"
-            alt="Linkedin"
-          />
-          <Contact
-            src="/github-mark-white.svg"
-            alt="Github"
-            href="https://github.com/christianrang"
-          />
-        </Centered>
       </Layout>
     </>
   );

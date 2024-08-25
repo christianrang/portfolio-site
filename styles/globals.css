@@ -59,8 +59,7 @@ header {
     color: var(--third-text-color);
     background: var(--main-bg-color);
     position: relative;
-    margin: calc(var(--h2-font-size) * 1) 0 0 calc(var(--h2-font-size) * 2);
-    width: calc(var(--max-width) - var(--h1-font-size));
+    width: var(--max-width);
 
     /* NOTE: adjust this to change how the border aligns with the header */
     --top-margin: calc(var(--h2-font-size) * 1.4);
@@ -72,8 +71,6 @@ header > div{
     background: var(--main-bg-color);
     top: calc(var(--top-margin) * -1);
     left: calc(var(--h2-font-size) * -.17);
-    padding: 0 0 0 0;
-    margin: 0 0 0 0;
 }
 
 h1,
