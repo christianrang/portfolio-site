@@ -1,16 +1,16 @@
 import styles from "@/styles/Projects.module.css";
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
 import { useRouter } from "next/router";
 
 export type ProjectInfo = {
     name: string;
-    github: string;
-    seeMoreLink: string;
+    github?: string;
+    seeMoreLink?: string;
     img: string;
     tldr: string;
     body: string;
-    pageUrl: string;
+    pageUrl?: string;
     date: string;
     tags?: string[];
 };
@@ -38,31 +38,58 @@ type ProjectsCardProps = {
 };
 
 const ProjectsCard = ({ workInfo }: ProjectsCardProps) => {
-    const router = useRouter();
+    const iconHeight = 24;
 
     return (
-        <div
-            className={styles.contained}
-            onClick={() => {
-                router.push(workInfo.seeMoreLink);
-            }}
-        >
-            <div className={styles.leftcontained}>
-                <Image className={styles.imgcontained} src={workInfo.img} alt="Image missing" width="1920" height="1080" />
-            </div>
-            <div className={styles.rightcontained}>
-                <h1 className={styles.header}>
-                    <div>
-                        <Link href={workInfo.seeMoreLink}>{workInfo.name}</Link>
+        <>
+            <div
+                className={styles.contained}
+            >
+                <div className={styles.leftcontained}>
+                    <Image
+                        className={styles.imgcontained}
+                        src={workInfo.img}
+                        alt="Image missing"
+                        width="1920"
+                        height="1080"
+                    />
+                </div>
+                <div className={styles.rightcontained}>
+                    <p className={styles.header}>{workInfo.name}</p>
+                    <div className={styles.cardtagscontainer}>
+                        {workInfo.tags ? (
+                            <WorkCardTag tags={workInfo.tags} />
+                        ) : null}
                     </div>
-                </h1>
-                <div className={styles.footer}>
-                    {workInfo.tags ? (
-                        <WorkCardTag tags={workInfo.tags} />
-                    ) : null}
+                    <div className={styles.links}>
+                            {workInfo.pageUrl ? (
+                                <div className={styles.link}>
+                                <Link href={workInfo.pageUrl}>
+                                    <Image
+                                        src="/external-link-svgrepo-com.svg"
+                                        alt=""
+                                        width={iconHeight}
+                                        height={iconHeight}
+                                    />
+                                </Link>
+                                </div>
+                            ) : null}
+                            {workInfo.github ? (
+                            <div className={styles.link}>
+                            <Link href={workInfo.github}>
+                                <Image
+                                    src="/source-code-100.svg"
+                                    alt=""
+                                    width={iconHeight}
+                                    height={iconHeight}
+                                />
+                            </Link>
+                            </div>
+                            ) : null}
+                    </div>
                 </div>
             </div>
-        </div>
+        </>
     );
 };
 

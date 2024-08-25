@@ -12,7 +12,7 @@ const Contact = ({ src, alt, href }: ContactProps) => {
     <>
       <div className={styles.contact}>
         <a href={href}>
-          <Image src={src} width={150} height={100} alt={alt} />
+          <Image src={src} width={24} height={24} alt={alt} />
         </a>
       </div>
     </>

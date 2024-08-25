@@ -1,7 +1,7 @@
 .navbaritem {
-    margin: 10px;
+    margin-right: 10px;
     display: inline-grid;
-    padding: 5px;
+    padding-right: 5px;
     font-weight: 500;
     font-size: 1.5rem;
     color: var(--primary-text-color);
@@ -11,21 +11,11 @@
     background: var(--main-bg-color);
 }
 
-.dropdownstyle {
-    background: var(--main-bg-color);
-}
-
-.dropdownstyle:hover {
-    background: grey;
-}
-
 .navbarcontainer {
     z-index: 10;
     display: inline-block;
     top: 10px;
     @media (max-width: 875px) {
-        margin-left: -10px;
-        min-width: 100px;
     }
 }
 

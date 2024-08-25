@@ -2,87 +2,108 @@ import Layout, { LayoutProps } from "../components/layout/layout";
 import Centered from "@/components/layout/helpers/centered";
 import { useEffect, useState } from "react";
 import ExperienceIndex from "@/components/experience";
-import styles from "@/styles/Layout.module.css";
+import layoutStyles from "@/styles/Layout.module.css";
+import aboutStyles from "@/styles/About.module.css";
 import Image from "next/image";
+import ProjectsIndex from "@/components/projects";
 
 type HomeProps = {
-  layoutProps: LayoutProps;
+    layoutProps: LayoutProps;
+    isProjectsEnabled: boolean;
 };
 
 export async function getStaticProps() {
-  const isProjectsEnabled = process.env.NAVBAR_ENABLED_PROJECTS;
+    const isProjectsEnabled = process.env.NAVBAR_ENABLED_PROJECTS === "true";
 
-  return {
-    props: {
-      layoutProps: {
-        navbarProps: {
-          enabledRoutes: {
-            projects: isProjectsEnabled,
-          },
+    return {
+        props: {
+            isProjectsEnabled: isProjectsEnabled,
+            layoutProps: {
+                navbarProps: {
+                    enabledRoutes: {
+                        projects: isProjectsEnabled,
+                    },
+                },
+            },
         },
-      },
-    },
-  };
+    };
 }
 
-export default function Home({ layoutProps }: HomeProps) {
-  const [isVisible, setIsVisible] = useState(true);
-  const [height, setHeight] = useState(0);
-  const arrowHeight = 20;
+export default function Home({ layoutProps, isProjectsEnabled }: HomeProps) {
+    const [isVisible, setIsVisible] = useState(true);
+    const [_, setHeight] = useState(0);
+    const arrowHeight = 20;
 
-  useEffect(() => {
-    var element = window.document.querySelector("#scroll-for-more-tracked");
-    element?.addEventListener("scroll", listenToScroll);
-    return () => element?.removeEventListener("scroll", listenToScroll);
-  }, []);
+    useEffect(() => {
+        var element = window.document.querySelector("#scroll-for-more-tracked");
+        element?.addEventListener("scroll", listenToScroll);
+        return () => element?.removeEventListener("scroll", listenToScroll);
+    }, []);
 
-  const listenToScroll = () => {
-    let heightToHideFrom = 200;
-    var winScroll = window.document.querySelector("#scroll-for-more-tracked")
-      ?.scrollTop;
-    if (winScroll === undefined) {
-      winScroll = 0;
-    }
-    setHeight(winScroll);
+    const listenToScroll = () => {
+        let heightToHideFrom = 200;
+        var winScroll = window.document.querySelector(
+            "#scroll-for-more-tracked"
+        )?.scrollTop;
+        if (winScroll === undefined) {
+            winScroll = 0;
+        }
+        setHeight(winScroll);
 
-    if (winScroll > heightToHideFrom) {
-      isVisible && setIsVisible(false);
-    } else {
-      setIsVisible(true);
-    }
-  };
+        if (winScroll > heightToHideFrom) {
+            isVisible && setIsVisible(false);
+        } else {
+            setIsVisible(true);
+        }
+    };
 
-  return (
-    <>
-      <Layout navbarProps={layoutProps.navbarProps}>
-        <Centered>
-          <h1 className="intro">Hi! I&apos;m Christian Rang.</h1>
-          <h2 className="intro">I build effecient backends.</h2>
-          <p className="intro">
-            I&apos;m a software engineer with experience building backend
-            applications. I enjoy opportunities to branch out my skill set into
-            web and TUI applications.
-          </p>
-        </Centered>
-        <div className={styles.footercontainer}>
-          <div className={styles.footerinnercontainer}>
-            {isVisible && (
-              <div id="hide">
-                Scroll for more
-                <div className={styles.footerinnercontainer}>
-                  <Image
-                    src="/down-arrow.svg"
-                    alt=""
-                    width={arrowHeight}
-                    height={arrowHeight}
-                  />
+    return (
+        <>
+            <Layout navbarProps={layoutProps.navbarProps}>
+                <div id="about" />
+                <Centered>
+                    <header>
+                        <div>
+                            <h1 className={aboutStyles.intro}>
+                                Hi! I&apos;m <strong>Christian Rang.</strong>
+                            </h1>
+                            <h2 className={aboutStyles.intro}>
+                                I build efficient backends.
+                            </h2>
+                        </div>
+                        <p className={aboutStyles.intro}>
+                            With 6+ years of experience, I have a passion for
+                            writing scalable, efficient, and maintainable code.
+                            I specialize in kubernetes, Go, and cloud-native
+                            technologies. I have worked with clients including
+                            Google and Southern Fibernet.
+                        </p>
+                    </header>
+                </Centered>
+                <div className={layoutStyles.footercontainer}>
+                    <div className={layoutStyles.footerinnercontainer}>
+                        {isVisible && (
+                            <div id="hide">
+                                Scroll for more
+                                <div
+                                    className={
+                                        layoutStyles.footerinnercontainer
+                                    }
+                                >
+                                    <Image
+                                        src="/down-arrow.svg"
+                                        alt=""
+                                        width={arrowHeight}
+                                        height={arrowHeight}
+                                    />
+                                </div>
+                            </div>
+                        )}
+                    </div>
                 </div>
-              </div>
-            )}
-          </div>
-        </div>
-        <ExperienceIndex />
-      </Layout>
-    </>
-  );
+                {isProjectsEnabled && <ProjectsIndex header />}
+                <ExperienceIndex header />
+            </Layout>
+        </>
+    );
 }

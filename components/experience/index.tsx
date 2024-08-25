@@ -1,7 +1,9 @@
 import ExperienceCard, { ExperienceInfo } from "./card";
 import styles from "@/styles/Experience.module.css";
 
-type ExperienceIndexProps = {};
+type ExperienceIndexProps = {
+    header?: boolean;
+};
 
 export const experienceInfoList: ExperienceInfo[] = [
   {
@@ -13,12 +15,16 @@ export const experienceInfoList: ExperienceInfo[] = [
       <>
         <ul style={{ listStyleType: "circle" }}>
           <li>
-            Reduced Google Software Development contract backlog by 100% in 6
-            months. This recovered the contract to a healthy state from
-            unwilling to resign.
+              <p>
+                  Reduced Google Software Development contract backlog by 100% in 6
+                  months. This recovered the contract to a healthy state from
+                  unwilling to resign.
+              </p>
           </li>
           <li>
-            Designed and implemented Custom Operator to automate 40 hours per week of manual work
+              <p>
+                  Designed and implemented Custom Operator to automate 40 hours per week of manual work
+              </p>
           </li>
         </ul>
       </>
@@ -26,7 +32,7 @@ export const experienceInfoList: ExperienceInfo[] = [
     tags: ["Go", "K8s", "GCP", "Bash", "Python"],
   },
   {
-    company: "SecDevOps Consultant",
+    company: "Freelance",
     jobTitle: "SecDevOps Consultant",
     startDate: "Oct 2021",
     endDate: "Present",
@@ -34,18 +40,24 @@ export const experienceInfoList: ExperienceInfo[] = [
       <>
         <ul style={{ listStyleType: "circle" }}>
           <li>
-            Developed Golang code for ingesting data using ETL into applications
-            saving 1 hour of daily manual work
+            <p>
+                Developed Golang code for ingesting data using ETL into applications
+                saving 1 hour of daily manual work
+            </p>
           </li>
           <li>
-            Used network packet captures to reverse engineer SOAP API and
-            automate configuration backups initially only available via Java GUI
-            saving 1 hour of daily work
+              <p>
+                  Used network packet captures to reverse engineer SOAP API and
+                  automate configuration backups initially only available via Java GUI
+                  saving 1 hour of daily work
+              </p>
           </li>
           <li>
-            Designed SharePoint page to bring paper employee handbooks, upcoming
-            events and company news into a centralized web platform for all
-            employees
+              <p>
+                  Designed SharePoint page to bring paper employee handbooks, upcoming
+                  events and company news into a centralized web platform for all
+                  employees
+              </p>
           </li>
         </ul>
       </>
@@ -61,7 +73,9 @@ export const experienceInfoList: ExperienceInfo[] = [
       <>
         <ul style={{ listStyleType: "circle" }}>
           <li>
-            Created custom python / netmiko scripts to reduce time handling frequent tasks
+              <p>
+                  Created custom python / netmiko scripts to reduce time handling frequent tasks
+              </p>
           </li>
         </ul>
       </>
@@ -70,14 +84,16 @@ export const experienceInfoList: ExperienceInfo[] = [
   },
   {
     company: "Southern Fibernet",
-    jobTitle: "NOC Engineer",
+    jobTitle: "Linux SysAdmin",
     startDate: "Oct 2018",
     endDate: "Feb 2021",
     body: (
       <>
         <ul style={{ listStyleType: "circle" }}>
           <li>
-            Built and integrated a web dashboard and API for remote querying of logs reducing mean time to restore and troubleshooting
+              <p>
+                  Built and integrated a web dashboard and API for remote querying of logs reducing mean time to restore and troubleshooting
+              </p>
           </li>
         </ul>
       </>
@@ -86,10 +102,14 @@ export const experienceInfoList: ExperienceInfo[] = [
   },
 ];
 
-const ExperienceIndex = ({}: ExperienceIndexProps) => {
+const ExperienceIndex = ({header}: ExperienceIndexProps) => {
   return (
     <>
-      <div className={styles.bigcontainer}>
+    <div className={styles.bigcontainer}>
+    <div id="experience" />
+    {header && (
+        <h2>/experience</h2>
+    )}
         {experienceInfoList.map((experienceInfo, index) => {
           return (
             <>
