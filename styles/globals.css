@@ -53,35 +53,6 @@ body {
     background: var(--main-bg-color);
 }
 
-h1.intro {
-    text-align: left;
-    margin-bottom: 5px;
-    color: var(--primary-text-color);
-    padding: 0 0 0 0;
-    margin: 0 0 0 0;
-}
-
-h2.intro {
-    color: var(--third-text-color);
-    text-align: left;
-    padding: 0 0 0 0;
-    margin: 0 0 0 0;
-}
-
-p.intro {
-    color: var(--secondary-text-color);
-}
-
-header > p.intro {
-    color: var(--secondary-text-color);
-    padding: calc(var(--top-margin) * 1.5) calc(var(--p-font-size) * 1) var(--p-font-size) var(--p-font-size);
-    word-break: break-word;
-
-    @media (max-width: 700px) {
-        padding: calc(var(--h2-font-size) * 8) 0 0 var(--p-font-size);
-    }
-}
-
 header {
     border: 2px solid var(--primary-text-color);
     border-radius: 10px;
@@ -103,13 +74,6 @@ header > div{
     left: calc(var(--h2-font-size) * -.17);
     padding: 0 0 0 0;
     margin: 0 0 0 0;
-}
-
-
-div.intro {
-    position: -webkit-sticky;
-    position: fixed;
-    top: 0;
 }
 
 h1,
