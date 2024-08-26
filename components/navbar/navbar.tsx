@@ -64,7 +64,6 @@ const Navbar = ({ enabledRoutes }: NavbarProps) => {
                                                 <Link
                                                     key={index}
                                                     href={route}
-                                                    scroll={true}
                                                 >
                                                     {name}
                                                 </Link>
