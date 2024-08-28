@@ -29,19 +29,19 @@ const Navbar = ({ enabledRoutes }: NavbarProps) => {
     const navbarItems: NavItem[] = [
         {
             name: "/about",
-            href: "#about",
+            href: "/#about",
             enabled: true,
             type: NavItemType.Anchor,
         },
         {
             name: "/projects",
-            href: "#projects",
+            href: "/#projects",
             enabled: enabledRoutes?.projects || false,
             type: NavItemType.Anchor,
         },
         {
             name: "/experience",
-            href: "#experience",
+            href: "/#experience",
             enabled: true,
             type: NavItemType.Anchor,
         },
