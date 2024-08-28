@@ -1,9 +1,8 @@
 import Centered from "@/components/layout/helpers/centered";
-import Layout from "@/components/layout/layout";
-import { NavbarProps } from "@/components/navbar/navbar";
+import Layout, { LayoutProps } from "../components/layout/layout";
 
 type Custom404Props = {
-  navbarProps?: NavbarProps;
+  layoutProps?: LayoutProps;
 }
 
 export async function getStaticProps() {
@@ -20,9 +19,9 @@ export async function getStaticProps() {
   };
 }
 
-const Custom404 = ({navbarProps}: Custom404Props) => {
+const Custom404 = ({layoutProps}: Custom404Props) => {
   return (
-    <Layout navbarProps={navbarProps}>
+    <Layout navbarProps={layoutProps?.navbarProps}>
       <Centered>Uhhhh... I think you are lost. This is 404 Avenue.</Centered>
     </Layout>
   );
