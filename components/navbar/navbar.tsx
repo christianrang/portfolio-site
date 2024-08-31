@@ -2,6 +2,8 @@ import styles from "@/styles/Navbar.module.css";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import Contact from "@/components/contactme/contactme";
+import GithubIcon from "@/components/icons/github";
+import LinkedInIcon from "@/components/icons/linkedin";
 
 type NavItem = {
     name: string;
@@ -61,10 +63,7 @@ const Navbar = ({ enabledRoutes }: NavbarProps) => {
                                                 key={index}
                                                 className={styles.navbaritem}
                                             >
-                                                <Link
-                                                    key={index}
-                                                    href={route}
-                                                >
+                                                <Link key={index} href={route}>
                                                     {name}
                                                 </Link>
                                             </div>
@@ -87,16 +86,13 @@ const Navbar = ({ enabledRoutes }: NavbarProps) => {
                             }
                         )}
                     </>
-                        <Contact
-                            href="https://www.linkedin.com/in/christian-rang"
-                            src="/linkedin.png"
-                            alt="Linkedin"
-                        />
-                    <Contact
-                        src="/github-mark-white.svg"
-                        alt="Github"
-                        href="https://github.com/christianrang"
-                    />
+                    <Contact href="https://www.linkedin.com/in/christian-rang">
+                        <LinkedInIcon />
+                    </Contact>
+                    <Contact href="https://github.com/christianrang">
+                        <GithubIcon />
+                    </Contact>
+
                 </div>
             </div>
         </>

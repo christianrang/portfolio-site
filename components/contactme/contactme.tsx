@@ -1,22 +1,18 @@
-import Image from "next/image";
 import styles from "@/styles/Contactme.module.css";
 
 type ContactProps = {
-  src: string;
-  alt: string;
-  href: string;
+    href: string;
+    children?: React.ReactNode;
 };
 
-const Contact = ({ src, alt, href }: ContactProps) => {
-  return (
-    <>
-      <div className={styles.contact}>
-        <a href={href}>
-          <Image src={src} width={24} height={24} alt={alt} />
-        </a>
-      </div>
-    </>
-  );
+const Contact = ({ href, children }: ContactProps) => {
+    return (
+        <>
+            <div className={styles.contact}>
+                <a href={href}>{children}</a>
+            </div>
+        </>
+    );
 };
 
 export type { ContactProps };

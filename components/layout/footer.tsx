@@ -11,7 +11,7 @@ const Footer = () => {
                         <div className={styles.footer}>
                             <Link href="https://github.com/christianrang/portfolio-site">
                                 <Image
-                                    src="/github-mark-white.svg"
+                                    src="/github.svg"
                                     alt=""
                                     width={githubHeight}
                                     height={githubHeight}
