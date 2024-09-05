@@ -52,30 +52,15 @@ const Navbar = ({ enabledRoutes }: NavbarProps) => {
     return (
         <>
             <div className={styles.container}>
-                <div className={styles.navbarcontainer}>
-                    <>
-                        {navbarItems.map(
-                            ({ name, href: route, enabled, type }, index) => {
-                                if (enabled) {
-                                    if (type === NavItemType.Anchor) {
-                                        return (
-                                            <div
-                                                key={index}
-                                                className={styles.navbaritem}
-                                            >
-                                                <Link key={index} href={route}>
-                                                    {name}
-                                                </Link>
-                                            </div>
-                                        );
-                                    }
+                <div>
+                    {navbarItems.map(
+                        ({ name, href: route, enabled, type }, index) => {
+                            if (enabled) {
+                                if (type === NavItemType.Anchor) {
                                     return (
                                         <div
                                             key={index}
                                             className={styles.navbaritem}
-                                            onClick={() => {
-                                                router.push(route);
-                                            }}
                                         >
                                             <Link key={index} href={route}>
                                                 {name}
@@ -83,16 +68,30 @@ const Navbar = ({ enabledRoutes }: NavbarProps) => {
                                         </div>
                                     );
                                 }
+                                return (
+                                    <div
+                                        key={index}
+                                        className={styles.navbaritem}
+                                        onClick={() => {
+                                            router.push(route);
+                                        }}
+                                    >
+                                        <Link key={index} href={route}>
+                                            {name}
+                                        </Link>
+                                    </div>
+                                );
                             }
-                        )}
-                    </>
+                        }
+                    )}
+                </div>
+                <div>
                     <Contact href="https://www.linkedin.com/in/christian-rang">
                         <LinkedInIcon />
                     </Contact>
                     <Contact href="https://github.com/christianrang">
                         <GithubIcon />
                     </Contact>
-
                 </div>
             </div>
         </>

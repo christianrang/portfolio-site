@@ -11,17 +11,11 @@
     background: var(--main-bg-color);
 }
 
-.navbarcontainer {
-    z-index: 10;
-    display: inline-block;
-    top: 10px;
-    @media (max-width: 875px) {
-    }
-}
-
 .container {
     min-width: var(--min-width);
     max-width: var(--max-width);
     margin-left: auto;
     margin-right: auto;
+    display: flex;
+    justify-content: space-between;
 }
