@@ -28,6 +28,9 @@
     color: var(--primary-text-color);
     font-family: "Roboto Mono", monospace;
 
+    padding-top: var(--h1-font-size);
+    padding-bottom: var(--h1-font-size);
+
     position: -webkit-sticky;
     position: sticky;
     top: 0;
