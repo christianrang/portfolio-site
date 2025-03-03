@@ -18,4 +18,5 @@
     margin-right: auto;
     display: flex;
     justify-content: space-between;
+    height: var(--h2-font-size);
 }
